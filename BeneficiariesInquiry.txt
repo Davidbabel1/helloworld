@@ -1,0 +1,70 @@
+REQUEST
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://www.invex.com/esb/portal/accounts/beneficiariesinquiry/in/v1.0" xmlns:v11="http://www.invex.com/esb/framework/servicesinterfaceheader/v1.0" xmlns:v12="http://www.invex.com/esb/framework/commons/header/errorresponse/v1.0" xmlns:v13="http://www.invex.com/esb/portal/accounts/beneficiariesinquiry/request/v1.0" xmlns:v14="http://www.invex.com/esb/flexcube/commons/header/v1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:BeneficiariesInquiryMessageIn>
+         <v11:header>
+            
+            <v11:requestSystem>PORTAL</v11:requestSystem>
+            
+         </v11:header>
+         <v13:BeneficiariesInquiryRequest>
+            <!--Optional:-->
+            <v14:contextData>
+               <v14:source>PORTALSYS</v14:source>
+               <v14:userId>PORTALUSR</v14:userId>
+               <v14:branch>001</v14:branch>
+               <v14:sourceUserId>PORTALUSR</v14:sourceUserId>
+            </v14:contextData>
+            <v13:accountNumber>00101011551</v13:accountNumber>
+            <!--Optional:-->
+            <v13:beneficiaryType>B</v13:beneficiaryType>  						<!-- T = Titular, B = Tercero -->
+            <!--Optional:-->
+            <v13:sameBank>true</v13:sameBank> 									<!-- true = Banco INVEX, false = Otros bancos -->
+   		  <!--Optional:-->
+             <v13:isBeneficiaryCreditCard>false</v13:isBeneficiaryCreditCard>  <!-- true = TDC, false = Clabe, TDD y Celular --> 
+         </v13:BeneficiariesInquiryRequest>
+      </v1:BeneficiariesInquiryMessageIn>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+RESPONSE
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Body>
+      <ns0:BeneficiariesInquiryMessageOut xmlns:ns0="http://www.invex.com/esb/portal/accounts/beneficiariesinquiry/out/v1.0">
+         <ns1:header xmlns:ns1="http://www.invex.com/esb/framework/servicesinterfaceheader/v1.0">
+            <ns1:transactionId>f4057e47-637f-496d-a5b0-2332732ea0e4</ns1:transactionId>
+            <ns1:requestSystem>PORTAL</ns1:requestSystem>
+            <ns1:version>v1.0.0</ns1:version>
+            <ns1:requestDateTime>2020-04-02T10:38:46.856-06:00</ns1:requestDateTime>
+            <ns1:responseDateTime>2020-04-02T10:38:47.208-06:00</ns1:responseDateTime>
+            <ns1:statusResponse>OK</ns1:statusResponse>
+         </ns1:header>
+         <ns1:BeneficiariesInquiryResponse xmlns:ns1="http://www.invex.com/esb/portal/accounts/beneficiariesinquiry/response/v1.0">
+            <ns1:beneficiaryAccount>
+               <ns1:beneficiaryBank>INVEX</ns1:beneficiaryBank>
+               <ns1:beneficiaryAccount>4152313639646859</ns1:beneficiaryAccount>
+               <ns1:beneficiaryName>IVAN ROJAS CASTILLO</ns1:beneficiaryName>
+               <ns1:beneficiaryBankId>40059</ns1:beneficiaryBankId>
+               <ns1:beneficiaryRFCCURP>ROCI800811RP2</ns1:beneficiaryRFCCURP>
+            </ns1:beneficiaryAccount>
+            <ns1:beneficiaryAccount>
+               <ns1:beneficiaryBank>INVEX</ns1:beneficiaryBank>
+               <ns1:beneficiaryAccount>00101007409</ns1:beneficiaryAccount>
+               <ns1:beneficiaryName>ARTURO ISLAS ORTIZ</ns1:beneficiaryName>
+               <ns1:beneficiaryBankId>40059</ns1:beneficiaryBankId>
+               <ns1:beneficiaryRFCCURP>IAOA810607RN9</ns1:beneficiaryRFCCURP>
+            </ns1:beneficiaryAccount>
+            <ns1:beneficiaryAccount>
+               <ns1:beneficiaryBank>INVEX</ns1:beneficiaryBank>
+               <ns1:beneficiaryAccount>00101012775</ns1:beneficiaryAccount>
+               <ns1:beneficiaryName>IVAN ROJAS CASTILLO</ns1:beneficiaryName>
+               <ns1:beneficiaryBankId>40059</ns1:beneficiaryBankId>
+               <ns1:beneficiaryRFCCURP>ROCI800811RP2</ns1:beneficiaryRFCCURP>
+            </ns1:beneficiaryAccount>
+         </ns1:BeneficiariesInquiryResponse>
+      </ns0:BeneficiariesInquiryMessageOut>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
